@@ -1,0 +1,8 @@
+# Visual Studio Code - Settings
+.vscode
+
+# Program outputs
+data.out
+
+# Program binaries
+main
