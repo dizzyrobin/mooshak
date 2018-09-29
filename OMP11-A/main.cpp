@@ -3,6 +3,7 @@
 using namespace std;
 
 const int DAYS_IN_WEEK = 7;
+const string WEEK_DAYS[DAYS_IN_WEEK] = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
 
 int get_day_of_year(int month, int day) {
     int monthDays[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
@@ -22,20 +23,6 @@ int calculate_delay_week() {
     return dayOfYear % DAYS_IN_WEEK;
 }
 
-string week_to_string(int n) {
-    switch (n) {
-        case 0: return "Monday";
-        case 1: return "Tuesday";
-        case 2: return "Wednesday";
-        case 3: return "Thursday";
-        case 4: return "Friday";
-        case 5: return "Saturday";
-        case 6: return "Sunday";
-    }
-
-    return NULL;
-}
-
 int main(void) {
     int nCases;
     int day, month;
@@ -47,7 +34,7 @@ int main(void) {
         int dayOfYear = get_day_of_year(month, day);
         // (+ DAYS_IN_WEEK) prevents negative numbers
         int weekDay = (dayOfYear + DAYS_IN_WEEK - delayWeek) % DAYS_IN_WEEK;
-        cout << week_to_string(weekDay) << endl;
+        cout << WEEK_DAYS[weekDay] << endl;
     }
 
     return 0;
